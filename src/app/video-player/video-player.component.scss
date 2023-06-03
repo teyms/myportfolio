@@ -1,0 +1,325 @@
+.video-title{
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.vg-controls{
+  display: block;
+  // display: flex;
+  // flex-direction: row;
+  height: 80px;
+
+  .control-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .control-container.first{
+    width: 100%;
+    // background: red !important;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  .control-container.second{
+    width: 100%;
+    // background: blue !important;
+
+    .half-container{
+      display: flex;
+      width: 50%;
+    }
+    .half-container.second{
+      justify-content: flex-end;
+    }
+  }
+}
+
+.videoSrc-container{
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+
+  .video-url{
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    vertical-align: middle;
+    padding: 0 10px;
+  }
+
+  .videoSrc{
+    height: 20px;
+    width: 60%;
+  }
+}
+
+#videoPlayerContainer{
+  padding: 0 0 50px 0;
+}
+
+.pip-btn{
+  border: 0;
+  background-color: rgb(0, 0, 0, 0);
+  color: #ffffff;
+}
+
+.set-opacity{
+  opacity: 0.5;
+  visibility: visible;
+
+  position: absolute;
+  left: 90%;
+}
+
+.clear-opacity{
+  opacity: 1;
+  visibility: visible;
+
+  position: unset;
+  left: unset;
+}
+
+.progress-bar-tooltip{
+  color:#000000;
+  position: absolute;
+  background-color: #ffffff;
+  padding: 2px;
+  margin-top: -7px;
+  border: 1px;
+  border-radius: 3px;
+  opacity: .5;
+}
+
+.show-progress-bar{
+  display: unset;
+}
+
+.hide-progress-bar{
+  display: none;
+}
+
+.video-player{
+  height:auto; 
+  width: 75%;
+  margin: auto;
+  background: #000000;
+}
+video::-webkit-media-controls {
+  display: none;
+}
+
+.forward-backward-btn{
+  visibility: visible;
+  position: absolute;
+  left: 90%;
+  opacity: 0.5;
+  border: 1px;
+  border-radius: 3px;
+}
+
+.forward-btn{
+  top: -55%;
+}
+
+.backward-btn{
+  top: -15%;
+}
+
+
+@media screen and (max-width: 900px) {
+  #videoPlayerContainer{
+    font-size: 15px;
+  }
+  ::ng-deep .vg-play-pause{
+    width: 30px;
+  }
+  .vg-playback-button{
+    width:30px
+  }
+  .vg-track-selector{
+    width: 30px;
+  }
+  .vg-mute{
+    width:30px
+  }
+  .vg-volume{
+    width:70px
+  }
+  .pip-btn{
+    margin: 3px;
+  }
+  .vg-fullscreen{
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #videoPlayerContainer{
+    font-size: 10px;
+  }
+  ::ng-deep .vg-play-pause{
+    width: 25px;
+  }
+  .vg-playback-button{
+    width:25px
+  }
+  .vg-track-selector{
+    width: 25px;
+  }
+  .vg-mute{
+    width:25px
+  }
+
+  .vg-volume{
+    width:50px
+  }
+  ::ng-deep .vg-volume .volumeKnob{
+    width: 10px;
+    height: 10px;
+  }
+  .pip-btn{
+    margin-left: 5px;
+    font-size: 10px;
+  }
+  .vg-fullscreen{
+    width: 25px;
+  }
+  ::ng-deep [class*=" vg-icon-"], [class^=vg-icon-]{
+    font-size: 15px;
+  }
+  ::ng-deep .vg-scrub-bar .slider{
+    height: 10px;
+    width: 10px;
+    margin-top: -3px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  #videoPlayerContainer{
+    font-size: 10px;
+  }
+  .vg-controls{
+    height: 40px;
+  }
+  ::ng-deep .vg-play-pause{
+    height: 40px;
+  }
+  .vg-playback-button{
+    height: 40px;
+  }
+  .vg-track-selector{
+    height: 40px;
+    ::ng-deep .container{
+      margin:0;
+    }
+  }
+  .vg-mute{
+    height: 40px;
+  }
+
+  .vg-volume{
+    height:40px;
+  }
+  ::ng-deep .vg-volume .volumeKnob{
+    width: 10px;
+    height: 10px;
+  }
+  .pip-btn{
+    margin-left: 5px;
+    // margin-top: 9px;
+    font-size: 10px;
+    display: flex;
+    margin: auto;
+    // vertical-align: middle;
+  }
+  .vg-fullscreen{
+    height: 40px;
+  }
+  // ::ng-deep [class*=" vg-icon-"], [class^=vg-icon-]{
+  //   font-size: 15px;
+  // }
+  ::ng-deep .vg-scrub-bar {
+    height: 40px;
+    // .slider{
+    //   height: 10px;
+    //   width: 10px;
+    //   margin-top: -3px;
+    // }
+  }
+  .vg-time-display{
+    line-height: 40px;
+  }
+
+}
+@media screen and (max-width: 500px) {
+  #videoPlayerContainer{
+    font-size: 8px;
+    .video-player{ 
+      width: 90%;
+    }
+  }
+  .vg-controls{
+    height: 40px;
+  }
+  ::ng-deep .vg-play-pause{
+    height: 40px;
+  }
+  .vg-playback-button{
+    height: 40px;
+  }
+  .vg-track-selector{
+    height: 40px;
+    ::ng-deep .container{
+      margin:0;
+    }
+  }
+  .vg-mute{
+    height: 40px;
+  }
+
+  .vg-volume{
+    width: 30px;
+  }
+  ::ng-deep .vg-volume .volumeKnob{
+    top: 48%;
+    height: 6px;
+    width: 6px;
+  }
+  ::ng-deep .vg-volume .volumeValue{
+    height: 3px;
+  }
+  .pip-btn{
+    margin-left: 5px;
+    // margin-top: 9px;
+    font-size: 10px;
+    display: flex;
+    margin: auto;
+    // vertical-align: middle;
+  }
+  .vg-fullscreen{
+    height: 40px;
+  }
+  ::ng-deep [class*=" vg-icon-"], [class^=vg-icon-]{
+    font-size: 10px;
+  }
+  ::ng-deep .vg-scrub-bar {
+    height: 40px;
+    .slider{
+      height: 6px;
+      width: 6px;
+      margin-top: -2px;
+    }
+  }
+  ::ng-deep .vg-scrub-bar-current-time {
+    height: 3px;
+  }
+  .vg-time-display{
+    line-height: 40px;
+  }
+
+}

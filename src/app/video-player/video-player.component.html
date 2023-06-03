@@ -1,0 +1,68 @@
+<div class="video-title">
+  <p>{{'Video Player' | uppercase}}</p>
+</div>
+
+<div class="videoSrc-container">
+  <label class="video-url">Video URL:  </label>
+  <input type="text" id="videoSrcGet" class="videoSrc" value="" (keyup)='myLink($event)'/>
+</div>
+
+<div #videoPlayer id="videoPlayerContainer">
+  <vg-player class='video-player' (onPlayerReady)="onPlayerReady($event)"
+                                  (dblclick)="onVideoPlayerDbClick($event, videoPlayer)" 
+                                  (mousemove)="onHideVideoControl(videoControlElement)">
+    <vg-buffering></vg-buffering>
+    <div class="hide-control" (mouseover)="onOverVideoControl($event)" #videoControlElement>
+    <vg-controls class="vg-controls">
+      
+      <div class="control-container first">
+        <vg-scrub-bar class="vg-scrub-bar" #progressBar (mouseenter)="showTime(progressBar, $event)" 
+        (mouseleave)="hideTime(progressBar, $event)" 
+        (mousemove)="showSpecificTime(progressBar, $event, hoverProgressBar)">
+
+          <vg-scrub-bar-current-time [vgSlider]="true"></vg-scrub-bar-current-time>
+          <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+        </vg-scrub-bar>
+      </div>
+
+      <div class="control-container second">
+        <div class="half-container first">
+          <vg-play-pause class="vg-play-pause"></vg-play-pause>
+          <vg-playback-button class="vg-playback-button"></vg-playback-button>
+
+          <vg-time-display class="vg-time-display" vgProperty="current" vgFormat="hh:mm:ss" [class]="videoControlElement.style.visibility == 'hidden' ? 'set-opacity': 'clear-opacity'"></vg-time-display>
+
+          <div [ngClass]="{'hide-progress-bar':!showTimeToolTip, 'show-progress-bar':showTimeToolTip}"  class="progress-bar-tooltip" #hoverProgressBar >
+              <span>{{showHoverTime}}</span>
+          </div>
+        </div>
+
+        
+
+        <div class="half-container second">
+          <vg-time-display class="vg-time-display" vgProperty="total" vgFormat="hh:mm:ss"></vg-time-display>
+          <vg-track-selector class="vg-track-selector" vgFor="singleVideo"></vg-track-selector>
+          <vg-mute class="vg-mute"></vg-mute>
+          <vg-volume class="vg-volume"></vg-volume>
+          <button class="pip-btn" (click)="togglePIP()">PIP</button>
+
+          <vg-fullscreen class="vg-fullscreen"></vg-fullscreen>
+        </div>
+      </div>
+          
+    </vg-controls>
+  </div>
+
+
+
+    <video controls [poster]="(posterAct==true)?poster:''" #media [vgMedia]=$any(media) id="singleVideo" preload="metadata" [src]="videoText" [vgHls]="videoText"
+    (click)="stop($event)" (keyup)="handleKeyboardEvent($event);$event.preventDefault()" (keydown)="$event.preventDefault()"> 
+
+    <!-- <track kind="subtitles" label="ZH" src="http://192.168.0.12:4200/assets/sub/okok.vtt" srclang="zh" default> -->
+    </video>
+  </vg-player>
+</div>
+  <!-- <img id="videoImg" [src]="" width="100%" height="100%"/> -->
+  <!-- <canvas id="singleCanvas" (onchange)="getCanvas($event)" (click)="getCanvas($event)" style="width:100%; height: 100%; background-color: blue;" ></canvas> -->
+
+<router-outlet></router-outlet>
