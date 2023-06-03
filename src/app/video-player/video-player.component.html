@@ -4,7 +4,7 @@
 
 <div class="videoSrc-container">
   <label class="video-url">Video URL:  </label>
-  <input type="text" id="videoSrcGet" class="videoSrc" value="" (keyup)='myLink($event)'/>
+  <input type="text" id="videoSrcGet" class="videoSrc" [value]="videoText" (keyup)='myLink($event)'/>
 </div>
 
 <div #videoPlayer id="videoPlayerContainer">

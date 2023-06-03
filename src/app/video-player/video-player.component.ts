@@ -62,7 +62,7 @@ export class VideoPlayerComponent implements OnInit {
   ];
 
   //video control
-   videoText="";
+   videoText="https://ia800106.us.archive.org/25/items/archive-video-files/test.mp4";
 
   getLink='';
   // link =''
@@ -190,7 +190,7 @@ export class VideoPlayerComponent implements OnInit {
       //calculate time 
       const hoverPosition = (event.clientX - scrubBar.getBoundingClientRect().left) / scrubBar.offsetWidth;
       // hoverProgressBar.style.left = hoverPosition + "%";
-      hoverProgressBar.style.left = (event.clientX - scrubBar.getBoundingClientRect().left/2) + "px";
+      hoverProgressBar.style.left = (event.clientX - scrubBar.getBoundingClientRect().left/2) - 125 + "px";
 
       //convert to readable time
       this.showHoverTime = moment.utc((this.api.duration * hoverPosition) * 1000).format("HH:mm:ss");

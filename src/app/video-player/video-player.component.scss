@@ -9,9 +9,7 @@
 
 .vg-controls{
   display: block;
-  // display: flex;
-  // flex-direction: row;
-  height: 80px;
+  height: 60px;
 
   .control-container{
     display: flex;
@@ -20,18 +18,18 @@
 
   .control-container.first{
     width: 100%;
-    // background: red !important;
-    height: 30px;
+    height: 20px;
     justify-content: center;
     align-items: center;
   }
   .control-container.second{
     width: 100%;
-    // background: blue !important;
+    height: 40px;
 
     .half-container{
       display: flex;
       width: 50%;
+      align-items: center;
     }
     .half-container.second{
       justify-content: flex-end;
@@ -92,6 +90,7 @@
   border: 1px;
   border-radius: 3px;
   opacity: .5;
+  top: -25%;
 }
 
 .show-progress-bar{
@@ -130,6 +129,21 @@ video::-webkit-media-controls {
 }
 
 
+@media screen and (max-width: 1200px) {
+  .vg-controls{
+    height: 50px;
+    .control-container.first{
+      height: 15px;
+    }
+    .control-container.second{
+      height: 35px;
+  
+      .half-container{
+        align-items: center;
+      }
+    }
+  } 
+}
 @media screen and (max-width: 900px) {
   #videoPlayerContainer{
     font-size: 15px;
@@ -205,6 +219,13 @@ video::-webkit-media-controls {
   }
   .vg-controls{
     height: 40px;
+    .control-container.second{
+      height: 24px;
+  
+      // .half-container{
+      //   align-items: center;
+      // }
+    }
   }
   ::ng-deep .vg-play-pause{
     height: 40px;
@@ -253,6 +274,7 @@ video::-webkit-media-controls {
   }
   .vg-time-display{
     line-height: 40px;
+    height: 40px;
   }
 
 }
@@ -295,11 +317,9 @@ video::-webkit-media-controls {
   }
   .pip-btn{
     margin-left: 5px;
-    // margin-top: 9px;
     font-size: 10px;
     display: flex;
     margin: auto;
-    // vertical-align: middle;
   }
   .vg-fullscreen{
     height: 40px;
@@ -313,6 +333,108 @@ video::-webkit-media-controls {
       height: 6px;
       width: 6px;
       margin-top: -2px;
+    }
+  }
+  ::ng-deep .vg-scrub-bar-current-time {
+    height: 3px;
+  }
+  .vg-time-display{
+    line-height: 40px;
+  }
+
+}
+@media screen and (max-width: 350px) {
+
+
+  .video-title{
+    text-align: center;
+    font-size: 27px;
+  }
+
+  .videoSrc-container{
+    flex-direction: column;
+    margin: 30px;
+    align-items: center;
+
+    .videoSrc{
+      width: 100%;
+    }
+  }
+
+  #videoPlayerContainer{
+    font-size: 8px;
+    .video-player{ 
+      width: 90%;
+    }
+  }
+  .vg-controls{
+    height: 40px;
+
+    .control-container.second{
+      .half-container.first{
+        width: 40%;
+      }
+      .half-container.second{
+        width: 60%;
+      }
+    }
+
+
+  }
+  ::ng-deep .vg-play-pause{
+    height: 25px;
+  }
+  .vg-playback-button{
+    height: 25px;
+  }
+  .vg-track-selector{
+    height: 25px;
+    ::ng-deep .container{
+      margin:0;
+
+      .track-selected.vg-icon-closed_caption{
+        height: 34px;
+
+        select.trackSelector{
+          width: 0;
+        }
+      }
+    }
+  }
+  .vg-mute{
+    height: 25px;
+  }
+
+  .vg-volume{
+    width: 25px;
+  }
+  ::ng-deep .vg-volume .volumeKnob{
+    top: 48%;
+    height: 6px;
+    width: 6px;
+  }
+  ::ng-deep .vg-volume .volumeValue{
+    height: 3px;
+  }
+  .pip-btn{
+    width: 15x;
+    margin-left: 5px;
+    font-size: 8px;
+    display: flex;
+    margin: auto;
+  }
+  .vg-fullscreen{
+    height: 25px;
+  }
+  ::ng-deep [class*=" vg-icon-"], [class^=vg-icon-]{
+    font-size: 10px;
+  }
+  ::ng-deep .vg-scrub-bar {
+    height: 25px;
+    .slider{
+      height: 6px;
+      width: 6px;
+      margin-top: -1px;
     }
   }
   ::ng-deep .vg-scrub-bar-current-time {
