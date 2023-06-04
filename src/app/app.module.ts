@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Meta } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,6 +12,8 @@ import {VgStreamingModule } from '@videogular/ngx-videogular/streaming';
 // import { VgHlsModule } from 'ngx-videogular/hls';
 import Hls from 'hls.js';
 
+import { QRCodeModule } from 'angularx-qrcode';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppTopBarComponent } from './app-top-bar/app-top-bar.component';
@@ -20,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { VideoEmbedComponent } from './video-embed/video-embed.component';
+import { QrcodeGeneratorComponent } from './qrcode-generator/qrcode-generator.component';
 
 @NgModule({
   declarations: [
@@ -30,17 +34,20 @@ import { VideoEmbedComponent } from './video-embed/video-embed.component';
     FooterComponent,
     ContactComponent,
     VideoPlayerComponent,
-    VideoEmbedComponent
+    VideoEmbedComponent,
+    QrcodeGeneratorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
     VgStreamingModule,
     HttpClientModule,
+    QRCodeModule,
   ],
   providers: [Meta],
   bootstrap: [AppComponent]

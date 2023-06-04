@@ -62,7 +62,7 @@ export class VideoPlayerComponent implements OnInit {
   ];
 
   //video control
-   videoText="https://ia800106.us.archive.org/25/items/archive-video-files/test.mp4";
+   videoText="";
 
   getLink='';
   // link =''
@@ -102,7 +102,7 @@ export class VideoPlayerComponent implements OnInit {
   }
 
   onHideControls(state:boolean) {
-    console.log('Are controls hidden?', state);
+    // console.log('Are controls hidden?', state);
   }
  
  myLink(link:any){

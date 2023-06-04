@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EmailTemplateComponent } from './email-template/email-template.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
+import { QrcodeGeneratorComponent } from './qrcode-generator/qrcode-generator.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,18 @@ const routes: Routes = [
       robots          : 'index,follow',
       og_title        : 'Online Video Player',
       og_description  : 'Online Video Player that able to play mp4, m3u8 video, hls live streming but not limited to these. You just need to paste the link to the Video URL field',
+
+
+    }
+  },
+  {
+    path: 'qrcode', component: QrcodeGeneratorComponent, pathMatch: 'full',
+    data: {
+      title           : 'QR Code Generator',
+      description     : 'QR Code Generator that create a qr code for your website or social media link/url. you can customise you qr code and download it as a image',
+      robots          : 'index,follow',
+      og_title        : 'QR Code Generator',
+      og_description  : 'QR Code Generator that create a qr code for your website or social media link/url. you can customise you qr code and download it as a image',
 
 
     }

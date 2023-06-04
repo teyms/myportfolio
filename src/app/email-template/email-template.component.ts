@@ -58,7 +58,7 @@ export class EmailTemplateComponent implements OnInit {
   
     if (messageType === 'iframeHeight') {
       const iframe_container = this.iframeContainerRef.nativeElement;
-      console.log(iframeHeight);
+      // console.log(iframeHeight);
       iframe_container.style.height = (iframeHeight + 300).toString() + 'px';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -68,7 +68,7 @@ export class EmailTemplateComponent implements OnInit {
     this.isGrabber = true;
     const element: HTMLElement = this.iframeRef.nativeElement;
     element.style.pointerEvents = 'none';
-    console.log('touch start');
+    // console.log('touch start');
   }
 
   onMouseUpGrabber(event:any){
@@ -114,7 +114,7 @@ export class EmailTemplateComponent implements OnInit {
 
   @HostListener('window:touchend') onTouchUp(event: TouchEvent) {
     this.onMouseUpGrabber(event);
-    console.log('touch end');
+    // console.log('touch end');
   }
 
   @HostListener('window:touchmove', ['$event']) onTouchMove(event: TouchEvent) {
@@ -136,7 +136,7 @@ export class EmailTemplateComponent implements OnInit {
     const htmlCode = element.innerHTML;
     this.renderer.removeChild(element, view.rootNodes[0]);
 
-    console.log(htmlCode);
+    // console.log(htmlCode);
     this.htmlInsert = htmlCode;
   }
 }
