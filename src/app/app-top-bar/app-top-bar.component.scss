@@ -64,11 +64,30 @@
   }
 
   .nav-list{
+    overflow-x: scroll;
     width: 100%;
     padding-right: 0;
     justify-content: center;
+    a{
+      margin: auto;
+      font-size: 15px;
+    }
+  }
+  .nav-list::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .nav-list::-webkit-scrollbar-thumb {
+      background-color: #bdbdbd;
+      border-radius: 10px;
+      border: 3px solid #ffffff;
+      width: 5px;
 
   }
+  .nav-list::-webkit-scrollbar-track {
+      background: #000000;
+  }
+
 
   
 }
@@ -76,7 +95,8 @@
 @media screen and (max-width: 380px) {
   .nav-list{
     a{
-      font-size: 15px;
+      font-size: 10px;
+      margin: auto;
     }
 
   }
@@ -85,7 +105,7 @@
 @media screen and (max-width: 310px) {
   .nav-list{
     a{
-      font-size: 10px;
+      font-size: 8px;
     }
 
   }

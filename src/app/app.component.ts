@@ -29,8 +29,8 @@ export class AppComponent {
 
       // this.activatedRoute.data.subscribe(data => {
       rt.data.subscribe(data => {
-        console.log('datadata');
-        console.log(data);
+        // console.log('datadata');
+        // console.log(data);
         
         if(data['title'] !== undefined){
           this.titleService.setTitle(data['title']);

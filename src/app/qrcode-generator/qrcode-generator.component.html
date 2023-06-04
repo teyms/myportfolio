@@ -1,0 +1,67 @@
+  <div class="qrcode-container">
+    <div class="container first">
+      <qrcode #myCanvas
+        [qrdata]="qrCodeData"
+        [allowEmptyString]="true"
+        [cssClass]="'center'"
+        [colorDark]="qrCodeColor"
+        [colorLight]="qrCodeBackground"
+        [elementType]="'canvas'"
+        [errorCorrectionLevel]="'M'"
+        [imageSrc]="selectedFileString"
+        [imageHeight]="75"
+        [imageWidth]="75"
+        [margin]="4"
+        [scale]="1"
+        [width]="qrCodeWidth"
+      ></qrcode>
+    </div>
+
+    <div class="container second">
+      <button (click)="downloadImage()">Download QR</button>
+
+
+      <div class="row input">
+        <label class="label qrcode"> QR Code data (URL link/ data) </label>
+        <input type="input" class="qrcode-data" name="qrcode" [(ngModel)]="qrCodeData">
+      </div>
+      <div class="row input">
+        <label class="label qrcode-color"> QR Code Color </label>
+        <input type="color" class="qrcode-color" name="qrcode-color" [(ngModel)]="qrCodeColor">
+      </div>
+      <div class="row input">
+        <label class="label qrcode-background"> Background Color </label>
+        <input type="color" class="qrcode-background" name="qrcode-background" [(ngModel)]="qrCodeBackground">
+      </div>
+      <div class="row input">
+        <label class="label qrcode-img"> Image </label>
+        <input type="file" accept="image/*" (change)="onFileSelected($event)" class="qrcode-img" name="qrcode" [(ngModel)]="selectedFile">
+      </div>
+      <div class="row input">
+        <label class="label qrcode-width"> Width(px) #Max:700px</label>
+        <input type="number" class="qrcode-width" name="qrcode-width" max="700" (ngModelChange)="onWidthChange($event)" [(ngModel)]="qrCodeWidth">
+      </div>
+
+    </div>
+  </div>
+
+
+  <ng-template>
+    <qrcode
+    [qrdata]="'https://github.com/Cordobo/'"
+    [allowEmptyString]="true"
+    [ariaLabel]="'QR Code image with the following content...'"
+    [cssClass]="'center'"
+    [colorDark]="'#000000ff'"
+    [colorLight]="'#ffffffff'"
+    [elementType]="'canvas'"
+    [errorCorrectionLevel]="'M'"
+    [imageSrc]="'assets/logo/tms_logo_trans.png'"
+    [imageHeight]="75"
+    [imageWidth]="75"
+    [margin]="4"
+    [scale]="1"
+    [title]="'A custom title attribute'"
+    [width]="300"
+  ></qrcode>
+  </ng-template>

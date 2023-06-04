@@ -102,7 +102,7 @@ export class VideoPlayerComponent implements OnInit {
   }
 
   onHideControls(state:boolean) {
-    console.log('Are controls hidden?', state);
+    // console.log('Are controls hidden?', state);
   }
  
  myLink(link:any){
