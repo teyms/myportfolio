@@ -19,6 +19,7 @@ import { EmailTemplateComponent } from './email-template/email-template.componen
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
+import { VideoEmbedComponent } from './video-embed/video-embed.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
     EmailTemplateComponent,
     FooterComponent,
     ContactComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    VideoEmbedComponent
   ],
   imports: [
     BrowserModule,
