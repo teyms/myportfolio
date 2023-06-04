@@ -11,15 +11,32 @@ import { filter } from 'rxjs';
 export class AppComponent {
   title = 'myportfolio';
 
+  showHeader: boolean = true;
+  showFooter: boolean = true;
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private metaTagService: Meta
-  ) { }
+  ) { 
+    
+  }
 
   ngOnInit(): void {
+    this.addSeoTag();
 
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: any) => {
+      // if(event !== undefined && event.url === '/video/embed'){
+      if(event !== undefined && (event.url).includes('/video/embed')){
+        this.showHeader = false;
+        this.showFooter = false;
+      }
+    });
+
+  }
+
+  addSeoTag(){
     //https://stackoverflow.com/questions/40662802/how-to-get-data-from-route-or-activatedroute-when-subscribing-to-router-events-s
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
@@ -91,8 +108,7 @@ export class AppComponent {
 
   }
 
-
-  getChild(activatedRoute: ActivatedRoute): ActivatedRoute {
+  private getChild(activatedRoute: ActivatedRoute): ActivatedRoute {
     if (activatedRoute.firstChild) {
       return this.getChild(activatedRoute.firstChild);
     } else {

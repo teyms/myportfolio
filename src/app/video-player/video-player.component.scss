@@ -55,6 +55,30 @@
   }
 }
 
+.embed-container{
+  margin: 20px;
+  display: block;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+
+  label{
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  p{
+    text-align: left;
+    padding: 20px;
+    margin: 0 auto;
+    color: #ffffff;
+    background: #000000;
+    vertical-align: middle;
+    width: 50%;
+    word-wrap: break-word;
+  }
+}
+
 #videoPlayerContainer{
   padding: 0 0 50px 0;
 }
