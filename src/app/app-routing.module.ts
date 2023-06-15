@@ -40,11 +40,12 @@ const routes: Routes = [
   {
     path: 'video/embed', component: VideoEmbedComponent, pathMatch: 'full',
     data: {
-      title           : 'Online Video Player | embed',
-      description     : 'Online Video Player that able to play mp4, m3u8 video, hls live streming but not limited to these. You just need to paste the link to the Video URL field',
-      robots          : 'index,follow',
-      og_title        : 'Online Video Player',
-      og_description  : 'Online Video Player that able to play mp4, m3u8 video, hls live streming but not limited to these. You just need to paste the link to the Video URL field',
+      title           : 'Embed | Online Video Player',
+      description     : 'Embed |Online Video Player that able to play mp4, m3u8 video, hls live streming but not limited to these. You just need to paste the link to the Video URL field',
+      robots          : 'noindex',
+      og_title        : 'Embed |Online Video Player',
+      og_description  : 'Embed |Online Video Player that able to play mp4, m3u8 video, hls live streming but not limited to these. You just need to paste the link to the Video URL field',
+      canonical       : 'https://tey-ms.com/video',
     }
   },
   {

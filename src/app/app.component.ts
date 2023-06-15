@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Title, Meta, MetaDefinition } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs';
+import { Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    private renderer2: Renderer2,
   ) { 
     
   }
@@ -88,6 +90,13 @@ export class AppComponent {
         // } else {
         //   this.metaTagService.removeTag("property='og:image'");
         // }
+
+        if(data['canonical'] !== undefined) {
+          const linkTag = this.renderer2.createElement('link');
+          this.renderer2.setAttribute(linkTag, 'rel', 'canonical');
+          this.renderer2.setAttribute(linkTag, 'href', data['canonical']);
+          this.renderer2.appendChild(document.head, linkTag);
+        }
 
         
       });
